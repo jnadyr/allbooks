@@ -1,72 +1,70 @@
 # AllBooks
 
-O AllBooks é uma loja virtual que vende livros da Casa do Código. 
-É um MVP que tá só começando e ainda tem muitas funcionalidades novas para serem desenvolvidas.
+AllBooks is an online store that sells books from Casa do Código.
+It's an MVP that's just getting started and still has many new features to be developed.
 
 # JSONServer + JWT Auth
 
-Essa é ma API Rest mockada, utilizando json-server e JWT.
+This is a mocked REST API, using json-server and JWT.
 
-## 🛠️ Instalação
+## 🛠 Installation
 
 ```bash
 $ npm install
 $ npm run start-auth
 ```
-## 🛠️ Como se registrar?
+## 🛠 How to register?
 
-Você pode fazer isso efetuando uma requisição post para:
+You can do this by making a POST request to:
 
 ```
 POST http://localhost:8000/public/registrar
 ```
 
-Com os seguintes dados:
-
+With the following data:
 
 ```
 {
-    "nome": "vinicios neves",
-    "email": "vinicios@alura.com.br",
-    "senha": "123456",
-    "endereco": "Rua Vergueiro, 3185",
-    "complemento": "Vila Mariana",
-    "cep": "04101-300"
+ "nome": "vinicios neves",
+ "email": "vinicios@alura.com.br",
+ "senha": "123456",
+ "endereco": "Rua Vergueiro, 3185",
+ "complemento": "Vila Mariana",
+ "cep": "04101-300"
 }
 ```
 
-Repare que o e-mail é um campo único e usuários com e-mails duplicados não serão persistidos.
+Note that the email is a unique field and users with duplicate emails will not be persisted.
 
-## 🛠️ Como fazer login?
+## 🛠 How to log in?
 
-Você pode fazer isso efetuando uma requisição post para:
+You can do this by making a POST request to:
 
 ```
 POST http://localhost:8000/public/login
 ```
 
-Com os seguintes dados:
-
-
-```
-{
-  "email": "vinicios@alura.com.br",
-  "senha":"123456"
-}
-```
-
-Você vai receber um token no seguinte formato:
+With the following data:
 
 ```
 {
-   "access_token": "<ACCESS_TOKEN>",
-   "user": { ... dados do usuário ... }
+ "email": "vinicios@alura.com.br",
+ "senha":"123456"
 }
 ```
 
-## Autenticar próximas requests?
+You will receive a token in the following format:
 
-E então, adicionar este mesmo token ao header das próximas requisições:
+```
+{
+ "access_token": "<ACCESS_TOKEN>",
+ "user": { ... user data ... }
+}
+```
+
+## Authenticate subsequent requests?
+
+And then, add this same token to the header of subsequent requests:
 
 ```
 Authorization: Bearer <ACCESS_TOKEN>
